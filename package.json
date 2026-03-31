@@ -1,0 +1,42 @@
+{
+  "name": "qcchain",
+  "version": "1.0.0",
+  "description": "QC Chain - Quantum-Secure Public Chain | 量子链",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "test:coverage": "npx hardhat coverage",
+    "test:gas": "REPORT_GAS=true npx hardhat test",
+    "deploy:testnet": "npx hardhat run scripts/deploy.js --network sepolia",
+    "deploy:mainnet": "npx hardhat run scripts/deploy.js --network ethereum",
+    "verify": "npx hardhat verify",
+    "lint": "npx solhint 'contracts/**/*.sol'",
+    "format": "npx prettier --write 'contracts/**/*.sol' 'scripts/**/*.js' 'test/**/*.js'",
+    "docs": "npx hardhat docgen"
+  },
+  "keywords": [
+    "quantum",
+    "blockchain",
+    "post-quantum-cryptography",
+    "defi",
+    "smart-contracts"
+  ],
+  "author": "QC Chain Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@openzeppelin/contracts": "^4.9.6",
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solidity-coverage": "^0.8.5",
+    "solhint": "^4.0.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-solidity": "^1.2.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "@openzeppelin/contracts-upgradeable": "^5.0.0"
+  }
+}
