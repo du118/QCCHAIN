@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Coin QC | 量子币 - 官方首页</title>
+    <meta name="description" content="Quantum Coin (QC) - 社区驱动的 Web3 量子科技原生代币，基于 BSC 币安智能链发行的标准 BEP-20 代币">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .logo {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.5em;
+            opacity: 0.9;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        /* Contract Box */
+        .contract-box {
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            word-break: break-all;
+        }
+        
+        .contract-label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .contract-address {
+            font-family: monospace;
+            font-size: 0.9em;
+            color: #4ade80;
+        }
+        
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .btn {
+            background: #fff;
+            color: #667eea;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+        
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+        
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        /* Token Info */
+        .token-info {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 60px 0;
+        }
+        
+        .token-info h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .info-item {
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .info-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        
+        .info-value {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        /* Roadmap */
+        .roadmap {
+            margin: 60px 0;
+        }
+        
+        .roadmap h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .roadmap-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 4px solid #4ade80;
+        }
+        
+        .roadmap-item h3 {
+            margin-bottom: 10px;
+        }
+        
+        .roadmap-item ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        .roadmap-item li::before {
+            content: "✓ ";
+            color: #4ade80;
+        }
+        
+        /* Social Links */
+        .social-links {
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .social-links a {
+            color: #fff;
+            font-size: 2em;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            margin-top: 60px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5em;
+            }
+            
+            .tagline {
+                font-size: 1.2em;
+            }
+            
+            .hero h2 {
+                font-size: 1.8em;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">🔮 QC</div>
+            <div class="tagline">Quantum Coin | 量子币</div>
+            <p>面向量子计算时代的原生加密代币</p>
+        </header>
+        
+        <!-- Hero Section -->
+        <div class="hero">
+            <h2>🚀 欢迎来到量子世界</h2>
+            <p>Quantum Coin (QC) 是社区驱动的 Web3 量子科技原生代币，基于 BSC 币安智能链发行的标准 BEP-20 代币，致力于打造量子科技与区块链深度融合的去中心化生态。</p>
+            
+            <!-- Contract Address -->
+            <div class="contract-box">
+                <div class="contract-label">📄 合约地址:</div>
+                <div class="contract-address">0x6b149920B0674fBB86beae9e76724e56AaB0D8b8</div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="btn-group">
+                <a href="https://pancakeswap.finance/swap?outputCurrency=0x6b149920B0674fBB86beae9e76724e56AaB0D8b8" class="btn btn-primary" target="_blank">🛒 立即购买 QC</a>
+                <a href="https://bscscan.com/token/0x6b149920B0674fBB86beae9e76724e56AaB0D8b8" class="btn" target="_blank">📊 BSCScan 查看</a>
+                <a href="https://t.me/QuantumCoinQC_Group" class="btn" target="_blank">💬 加入社区</a>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">💎</div>
+                <h3>100% 通缩</h3>
+                <p>1800 万枚固定供应，永不增发，绝对通缩模型</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔐</div>
+                <h3>安全透明</h3>
+                <p>合约已开源验证，无后门，所有交易链上可查</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>质押挖矿</h3>
+                <p>支持 QC/BNB/LP 三种质押模式，APY 最高 120%</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌐</div>
+                <h3>社区自治</h3>
+                <p>完全社区驱动的 DAO 治理，你说了算</p>
+            </div>
+        </div>
+        
+        <!-- Token Info -->
+        <div class="token-info">
+            <h2>📊 代币信息</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">代币名称</div>
+                    <div class="info-value">Quantum Coin</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">代币符号</div>
+                    <div class="info-value">QC</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">总供应量</div>
+                    <div class="info-value">18,000,000</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">区块链</div>
+                    <div class="info-value">BSC (BEP-20)</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">小数位</div>
+                    <div class="info-value">18</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">合约状态</div>
+                    <div class="info-value">✅ 已验证</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Roadmap -->
+        <div class="roadmap">
+            <h2>🗺️ 发展路线图</h2>
+            <div class="roadmap-item">
+                <h3>📍 Q2 2026（进行中）</h3>
+                <ul>
+                    <li>代币合约部署完成</li>
+                    <li>挖矿系统上线</li>
+                    <li>社区搭建（Twitter/Telegram）</li>
+                    <li>PancakeSwap 流动性上线</li>
+                    <li>CoinGecko/CMC 上币申请</li>
+                </ul>
+            </div>
+            <div class="roadmap-item">
+                <h3>📍 Q3-Q4 2026</h3>
+                <ul>
+                    <li>NFT 系列发行</li>
+                    <li>DAO 治理上线</li>
+                    <li>生态合作伙伴拓展</li>
+                    <li>社区空投活动</li>
+                </ul>
+            </div>
+            <div class="roadmap-item">
+                <h3>📍 2027+</h3>
+                <ul>
+                    <li>跨链布局</li>
+                    <li>量子科技生态应用落地</li>
+                    <li>全球社区拓展</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Social Links -->
+        <div class="social-links">
+            <h2>🌐 关注我们</h2>
+            <p style="margin: 20px 0;">加入我们的社区，获取最新动态</p>
+            <div>
+                <a href="https://twitter.com/QuantumCoinQC" target="_blank">🐦</a>
+                <a href="https://t.me/QuantumCoinQC_Group" target="_blank">💬</a>
+                <a href="https://github.com/du118/QCCHAIN" target="_blank">💻</a>
+                <a href="https://bscscan.com/token/0x6b149920B0674fBB86beae9e76724e56AaB0D8b8" target="_blank">📊</a>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 Quantum Coin QC. All rights reserved.</p>
+            <p style="margin-top: 10px; opacity: 0.7; font-size: 0.9em;">
+                免责声明：加密货币投资存在风险，请自行研究并谨慎投资
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
