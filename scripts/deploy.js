@@ -12,13 +12,13 @@ async function main() {
   
   // 配置代币分配地址（实际部署时替换为真实地址）
   const config = {
-    founder: process.env.FOUNDER_ADDRESS || deployer.address,
-    team: process.env.TEAM_ADDRESS || deployer.address,
-    mining: process.env.MINING_ADDRESS || deployer.address,
-    ecosystem: process.env.ECOSYSTEM_ADDRESS || deployer.address,
-    marketing: process.env.MARKETING_ADDRESS || deployer.address,
-    community: process.env.COMMUNITY_ADDRESS || deployer.address,
-    maintenance: process.env.MAINTENANCE_ADDRESS || deployer.address,
+    founder: process.env.FOUNDER_ADDRESS && process.env.FOUNDER_ADDRESS.trim() !== '' ? ethers.getAddress(process.env.FOUNDER_ADDRESS) : deployer.address,
+    team: process.env.TEAM_ADDRESS && process.env.TEAM_ADDRESS.trim() !== '' ? ethers.getAddress(process.env.TEAM_ADDRESS) : deployer.address,
+    mining: process.env.MINING_ADDRESS && process.env.MINING_ADDRESS.trim() !== '' ? ethers.getAddress(process.env.MINING_ADDRESS) : deployer.address,
+    ecosystem: process.env.ECOSYSTEM_ADDRESS && process.env.ECOSYSTEM_ADDRESS.trim() !== '' ? ethers.getAddress(process.env.ECOSYSTEM_ADDRESS) : deployer.address,
+    marketing: process.env.MARKETING_ADDRESS && process.env.MARKETING_ADDRESS.trim() !== '' ? ethers.getAddress(process.env.MARKETING_ADDRESS) : deployer.address,
+    community: process.env.COMMUNITY_ADDRESS && process.env.COMMUNITY_ADDRESS.trim() !== '' ? ethers.getAddress(process.env.COMMUNITY_ADDRESS) : deployer.address,
+    maintenance: process.env.MAINTENANCE_ADDRESS && process.env.MAINTENANCE_ADDRESS.trim() !== '' ? ethers.getAddress(process.env.MAINTENANCE_ADDRESS) : deployer.address,
   };
   
   console.log("📊 代币分配地址:");
