@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QC 量子币 - 完整白皮书</title>
+    <meta name="description" content="Quantum Coin (QC) 量子币官方白皮书">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+        }
+        h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .version { font-size: 1.2em; opacity: 0.8; margin-bottom: 20px; }
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .btn {
+            background: #fff;
+            color: #667eea;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+        .content {
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        h2 { color: #4ade80; margin: 30px 0 20px 0; font-size: 1.8em; }
+        h3 { color: #60a5fa; margin: 25px 0 15px 0; font-size: 1.4em; }
+        p { margin-bottom: 15px; font-size: 1.05em; }
+        ul, ol { margin-left: 30px; margin-bottom: 15px; }
+        li { margin-bottom: 8px; }
+        .highlight {
+            background: rgba(74, 222, 128, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #4ade80;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(0,0,0,0.2);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        th {
+            background: rgba(74, 222, 128, 0.3);
+            font-weight: bold;
+        }
+        .toc {
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .toc a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+        .toc a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid rgba(255,255,255,0.2);
+            opacity: 0.8;
+        }
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            h1 { font-size: 1.8em; }
+            .content { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📄 Quantum Coin (QC) 量子币</h1>
+            <div class="version">官方白皮书 v1.1 | 更新日期：2026-04-02</div>
+            
+            <div class="btn-group">
+                <a href="index.html" class="btn btn-primary">🏠 返回首页</a>
+                <a href="https://github.com/du118/QCCHAIN/blob/main/WHITEPAPER.md" class="btn" target="_blank">💻 GitHub 下载</a>
+                <a href="https://t.me/QuantumCoinQC_Group" class="btn" target="_blank">💬 加入社区</a>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="toc">
+                <h2 style="margin-top: 0;">📋 目录</h2>
+                <ol>
+                    <li><a href="#disclaimer">⚠️ 免责声明</a></li>
+                    <li><a href="#overview">🔮 项目概述</a></li>
+                    <li><a href="#vision">🎯 愿景与使命</a></li>
+                    <li><a href="#tokenomics">💰 代币经济模型</a></li>
+                    <li><a href="#unlock">⏱️ 解锁时间表</a></li>
+                    <li><a href="#mining">⛏️ 挖矿机制</a></li>
+                    <li><a href="#technology">🔧 技术架构</a></li>
+                    <li><a href="#roadmap">🗺️ 发展路线图</a></li>
+                    <li><a href="#contact">📞 联系方式</a></li>
+                </ol>
+            </div>
+
+            <h2 id="disclaimer">⚠️ 免责声明</h2>
+            <div class="highlight">
+                本文档仅供参考，不构成投资建议。加密货币投资存在高风险，请自行研究并谨慎决策。项目方不对任何投资损失承担责任。
+            </div>
+
+            <h2 id="overview">🔮 1. 项目概述</h2>
+            <div class="highlight">
+                <strong>Quantum Coin (QC) 量子币</strong> 是社区驱动的 Web3 量子科技原生代币，基于 BSC 币安智能链发行的标准 BEP-20 代币。
+            </div>
+            <p>我们致力于打造量子科技与区块链深度融合的去中心化生态，为量子计算领域的开发者、爱好者、投资者提供安全、透明、去中心化的价值载体与社区激励工具。</p>
+
+            <h3>核心信息</h3>
+            <table>
+                <tr><th>项目</th><th>值</th></tr>
+                <tr><td>代币名称</td><td>Quantum Coin</td></tr>
+                <tr><td>代币符号</td><td>QC</td></tr>
+                <tr><td>区块链</td><td>BSC (BEP-20)</td></tr>
+                <tr><td>合约地址</td><td><code>0x6b149920B0674fBB86beae9e76724e56AaB0D8b8</code></td></tr>
+                <tr><td>总供应量</td><td>18,000,000 QC</td></tr>
+                <tr><td>小数位</td><td>18</td></tr>
+                <tr><td>发行时间</td><td>2026-04-01</td></tr>
+            </table>
+
+            <h2 id="vision">🎯 2. 愿景与使命</h2>
+            <h3>核心愿景</h3>
+            <ul>
+                <li>🌟 <strong>成为全球量子科技领域的标杆性区块链代币</strong> - 搭建传统量子科技产业与 Web3 世界的桥梁</li>
+                <li>🤝 <strong>打造完全社区自治的 DAO 生态</strong> - 让所有 QC 持有者共同参与项目治理、生态建设与决策</li>
+                <li>💡 <strong>落地量子科技 Web3 应用场景</strong> - 逐步落地量子计算相关的 DeFi、NFT、DAO、Web3 应用场景</li>
+            </ul>
+
+            <h2 id="tokenomics">💰 3. 代币经济模型</h2>
+            <h3>代币分配（1800 万 QC）</h3>
+            <table>
+                <tr><th>用途</th><th>比例</th><th>数量</th><th>解锁规则</th></tr>
+                <tr><td>创始人</td><td>35%</td><td>6,300,000 QC</td><td>主网上线 20%，剩余 36 个月线性解锁</td></tr>
+                <tr><td>核心团队</td><td>15%</td><td>2,700,000 QC</td><td>主网上线 20%，剩余 18 个月线性解锁</td></tr>
+                <tr><td>挖矿奖励</td><td>30%</td><td>5,400,000 QC</td><td>比特币式减半机制</td></tr>
+                <tr><td>生态建设</td><td>5%</td><td>900,000 QC</td><td>按需分配</td></tr>
+                <tr><td>市场运营</td><td>5%</td><td>900,000 QC</td><td>按需分配</td></tr>
+                <tr><td>社区激励</td><td>5%</td><td>900,000 QC</td><td>按需分配</td></tr>
+                <tr><td>代码维护</td><td>5%</td><td>900,000 QC</td><td>按月分配</td></tr>
+            </table>
+
+            <div class="highlight">
+                <strong>✅ 100% 通缩:</strong> 总供应量 1800 万枚，永不增发，绝对通缩模型
+            </div>
+
+            <h2 id="unlock">⏱️ 4. 完整解锁时间表</h2>
+            <p><strong>假设主网上线时间</strong>: 2026-04-01</p>
+            <table>
+                <tr><th>时间</th><th>创始人</th><th>团队</th><th>质押挖矿</th><th>区块挖矿</th><th>累计流通</th><th>流通率</th></tr>
+                <tr><td>主网上线</td><td>126 万</td><td>54 万</td><td>-</td><td>-</td><td>180 万</td><td>10%</td></tr>
+                <tr><td>6 个月后</td><td>+84 万</td><td>+72 万</td><td>+150 万</td><td>+26 万</td><td>512 万</td><td>28.4%</td></tr>
+                <tr><td>12 个月后</td><td>+168 万</td><td>+144 万</td><td>+300 万</td><td>+52 万</td><td>844 万</td><td>46.9%</td></tr>
+                <tr><td>18 个月后</td><td>+252 万</td><td>+216 万</td><td>-</td><td>+78 万</td><td>1096 万</td><td>60.9%</td></tr>
+                <tr><td>24 个月后</td><td>+336 万</td><td>-</td><td>-</td><td>+105 万</td><td>1227 万</td><td>68.2%</td></tr>
+                <tr><td>36 个月后</td><td>+504 万</td><td>-</td><td>-</td><td>+157 万</td><td>1549 万</td><td>86.1%</td></tr>
+            </table>
+
+            <h2 id="mining">⛏️ 5. 挖矿机制</h2>
+            <h3>重要说明：两种挖矿机制</h3>
+            
+            <h4>A. 区块挖矿奖励（540 万 QC）</h4>
+            <p>完全对标比特币的减半机制，奖励给区块生产者。</p>
+            <table>
+                <tr><th>参数</th><th>值</th></tr>
+                <tr><td>初始区块奖励</td><td>2 QC</td></tr>
+                <tr><td>减半周期</td><td>210,000 区块（约 4 年）</td></tr>
+                <tr><td>总奖励上限</td><td>5,400,000 QC</td></tr>
+                <tr><td>分配方式</td><td>出块节点 70%，稳定节点 30%</td></tr>
+            </table>
+
+            <h4>B. 质押挖矿奖励（300 万 QC，首期）</h4>
+            <p>从 540 万区块挖矿奖励中划拨 300 万作为首期，用于质押挖矿激励。</p>
+            <table>
+                <tr><th>参数</th><th>值</th></tr>
+                <tr><td>首期奖励池</td><td>3,000,000 QC</td></tr>
+                <tr><td>释放周期</td><td>12 个月线性释放</td></tr>
+                <tr><td>奖励速率</td><td>约 0.095 QC/秒</td></tr>
+                <tr><td>发放方式</td><td>每日自动发放</td></tr>
+            </table>
+
+            <h3>3 种质押模式</h3>
+            <table>
+                <tr><th>模式</th><th>质押代币</th><th>奖励代币</th><th>预估 APY</th></tr>
+                <tr><td><strong>QC 质押</strong></td><td>QC</td><td>QC</td><td>~100%</td></tr>
+                <tr><td><strong>BNB 质押</strong></td><td>BNB</td><td>QC</td><td>~80%</td></tr>
+                <tr><td><strong>LP 质押</strong></td><td>QC-BNB LP</td><td>QC</td><td>~120%</td></tr>
+            </table>
+
+            <h2 id="technology">🔧 6. 技术架构</h2>
+            <h3>智能合约</h3>
+            <table>
+                <tr><th>项目</th><th>值</th></tr>
+                <tr><td>标准</td><td>BEP-20（兼容 ERC-20）</td></tr>
+                <tr><td>区块链</td><td>BSC 主网</td></tr>
+                <tr><td>编译器</td><td>Solidity v0.8.20</td></tr>
+                <tr><td>安全</td><td>OpenZeppelin 标准库</td></tr>
+            </table>
+
+            <h3>核心合约</h3>
+            <ul>
+                <li><strong>QCToken:</strong> 代币合约（1800 万固定供应）</li>
+                <li><strong>QCStaking:</strong> 质押挖矿合约（3 种模式）</li>
+                <li><strong>VestingSchedule:</strong> 代币解锁合约（线性释放）</li>
+                <li><strong>MiningReward:</strong> 挖矿奖励合约（减半机制）</li>
+            </ul>
+
+            <h2 id="roadmap">🗺️ 7. 发展路线图</h2>
+            <h3>Q2 2026（进行中）</h3>
+            <ul>
+                <li>✅ 代币合约部署</li>
+                <li>✅ 挖矿系统上线</li>
+                <li>✅ 官网搭建</li>
+                <li>⏳ PancakeSwap 流动性上线</li>
+                <li>⏳ CoinGecko/CMC 上币申请</li>
+            </ul>
+
+            <h3>Q3-Q4 2026</h3>
+            <ul>
+                <li>NFT 系列发行</li>
+                <li>DAO 治理上线</li>
+                <li>生态合作伙伴拓展</li>
+                <li>社区空投活动</li>
+            </ul>
+
+            <h3>2027+</h3>
+            <ul>
+                <li>跨链布局</li>
+                <li>量子科技生态应用落地</li>
+                <li>全球社区拓展</li>
+            </ul>
+
+            <h2 id="contact">📞 8. 联系方式</h2>
+            <ul>
+                <li><strong>官网:</strong> https://du118.github.io/QCCHAIN/</li>
+                <li><strong>GitHub:</strong> https://github.com/du118/QCCHAIN</li>
+                <li><strong>BSCScan:</strong> https://bscscan.com/token/0x6b149920B0674fBB86beae9e76724e56AaB0D8b8</li>
+                <li><strong>Twitter (X):</strong> https://twitter.com/QCIssuer</li>
+                <li><strong>Telegram:</strong> https://t.me/QuantumCoinQC_Group</li>
+            </ul>
+
+            <div class="highlight" style="margin-top: 30px;">
+                <strong>© 2026 Quantum Coin QC. All rights reserved.</strong><br>
+                免责声明：加密货币投资存在风险，请自行研究并谨慎投资
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 Quantum Coin QC. All rights reserved.</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                免责声明：加密货币投资存在风险，请自行研究并谨慎投资
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
